@@ -10,14 +10,14 @@ import java.util.UUID;
 
 @Data
 @Entity
-@Table(name = "partai")
-public class Partai {
+@Table(name = "wilayah_dapil")
+public class WilayahDapil {
     @Id
     private UUID id;
-
-    @Column(name = "nama_partai", nullable = false)
-    private String namaPartai;
-
-    @Column(name = "nomor_urut", nullable = false)
-    private Integer nomorUrut;
+    
+    @Column(name = "dapil_id", nullable = false)
+    private UUID dapilId;
+    
+    @Column(name = "nama_wilayah", nullable = false)
+    private String namaWilayah;
 }
