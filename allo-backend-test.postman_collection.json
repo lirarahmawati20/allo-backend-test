@@ -1,0 +1,236 @@
+{
+  "info": {
+    "name": "Allo Backend Test",
+    "description": "API collection for Allo Backend Test application",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Partai (Political Parties)",
+      "description": "Endpoints for managing political parties",
+      "item": [
+        {
+          "name": "Get All Partai",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/partai",
+              "host": ["{{base_url}}"],
+              "path": ["api", "partai"],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "",
+                  "description": "Filter by ID (UUID)",
+                  "disabled": true
+                },
+                {
+                  "key": "namaPartai",
+                  "value": "",
+                  "description": "Filter by name (partial match)",
+                  "disabled": true
+                },
+                {
+                  "key": "nomorUrut",
+                  "value": "",
+                  "description": "Filter by sequence number",
+                  "disabled": true
+                },
+                {
+                  "key": "sortBy",
+                  "value": "nomorUrut",
+                  "description": "Field to sort by",
+                  "disabled": true
+                },
+                {
+                  "key": "sortDirection",
+                  "value": "ASC",
+                  "description": "Sort direction (ASC or DESC)",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Get all political parties with optional filters and sorting"
+          }
+        },
+        {
+          "name": "Get Partai by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/partai/:id",
+              "host": ["{{base_url}}"],
+              "path": ["api", "partai", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "",
+                  "description": "UUID of the political party"
+                }
+              ]
+            },
+            "description": "Get a specific political party by ID"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dapil (Electoral Districts)",
+      "description": "Endpoints for managing electoral districts",
+      "item": [
+        {
+          "name": "Get All Dapil",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/dapil",
+              "host": ["{{base_url}}"],
+              "path": ["api", "dapil"],
+              "query": [
+                {
+                  "key": "namaDapil",
+                  "value": "",
+                  "description": "Filter by name (partial match)",
+                  "disabled": true
+                },
+                {
+                  "key": "provinsi",
+                  "value": "",
+                  "description": "Filter by province (partial match)",
+                  "disabled": true
+                },
+                {
+                  "key": "jumlahKursi",
+                  "value": "",
+                  "description": "Filter by number of seats",
+                  "disabled": true
+                },
+                {
+                  "key": "sortBy",
+                  "value": "namaDapil",
+                  "description": "Field to sort by",
+                  "disabled": true
+                },
+                {
+                  "key": "sortDirection",
+                  "value": "ASC",
+                  "description": "Sort direction (ASC or DESC)",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Get all electoral districts with optional filters and sorting"
+          }
+        },
+        {
+          "name": "Get Dapil by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/dapil/:id",
+              "host": ["{{base_url}}"],
+              "path": ["api", "dapil", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "",
+                  "description": "UUID of the electoral district"
+                }
+              ]
+            },
+            "description": "Get a specific electoral district by ID"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Caleg (Candidates)",
+      "description": "Endpoints for managing candidates",
+      "item": [
+        {
+          "name": "Get All Caleg",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/caleg",
+              "host": ["{{base_url}}"],
+              "path": ["api", "caleg"],
+              "query": [
+                {
+                  "key": "dapilId",
+                  "value": "",
+                  "description": "Filter by electoral district ID (UUID)",
+                  "disabled": true
+                },
+                {
+                  "key": "partaiId",
+                  "value": "",
+                  "description": "Filter by political party ID (UUID)",
+                  "disabled": true
+                },
+                {
+                  "key": "nama",
+                  "value": "",
+                  "description": "Filter by name (partial match)",
+                  "disabled": true
+                },
+                {
+                  "key": "jenisKelamin",
+                  "value": "",
+                  "description": "Filter by gender",
+                  "disabled": true
+                },
+                {
+                  "key": "nomorUrut",
+                  "value": "",
+                  "description": "Filter by sequence number",
+                  "disabled": true
+                },
+                {
+                  "key": "sortBy",
+                  "value": "nomorUrut",
+                  "description": "Field to sort by",
+                  "disabled": true
+                },
+                {
+                  "key": "sortDirection",
+                  "value": "ASC",
+                  "description": "Sort direction (ASC or DESC)",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Get all candidates with optional filters and sorting"
+          }
+        },
+        {
+          "name": "Get Caleg by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/caleg/:id",
+              "host": ["{{base_url}}"],
+              "path": ["api", "caleg", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "",
+                  "description": "UUID of the candidate"
+                }
+              ]
+            },
+            "description": "Get a specific candidate by ID"
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080",
+      "type": "string",
+      "description": "Base URL for the API"
+    }
+  ]
+}
